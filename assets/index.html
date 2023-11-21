@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicação do clima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <main class="conteinerPricipal">
+    <div class="titulo_e_barra">
+      <h1 class="titulo"> App do Clima</h1>
+      <span class="barra"></span>
+    </div>
+    <p class="mensagem">Confira o clima em <span>qualquer cidade do mundo!</span></p>
+    <form class="form_cidade">
+      <input type="text" class="localizacao" placeholder="Nome da cidade">
+      <button type="submit"><span class="material-symbols-outlined">travel_explore</span></button>
+    </form>
+    <ul class="conteiner_informacoes">
+      <li class="cidade_e_bandeira">
+        <h1 class="nome_cidade">Maceió</h1>
+        <img src="https://flagcdn.com/w40/br.png" alt="bandeira pais" class="bandeira">
+      </li>
+      <li class="temperatura_e_tempo">
+        <p class="temperatura">
+          <span data-informacao="temperatura">25°C</span>
+          <span class="material-symbols-outlined temp_icon">device_thermostat</span>
+        </p>
+        <p class="tempo">
+          <span data-informacao="tempo">Clear Sky</span>
+          <span class="material-symbols-outlined temp_icon">sunny</span>
+        </p>
+      </li>
+      <li class="humidade_e_ventos">
+        <p class="humidade">
+          <span class="material-symbols-outlined temp_icon icone">water_drop</span>
+          <span data-informacao="humidade">40%</span>
+        </p>
+        <p class="ventos">
+          <span data-informacao="ventos">3Km/h</span>
+          <span class="material-symbols-outlined temp_icon icone">wind_power</span>
+        </p>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>

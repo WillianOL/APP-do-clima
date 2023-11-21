@@ -1,0 +1,239 @@
+:root {
+  --cor-destaque: #b244f2;
+  --cor-contraste: #4C1B59;
+  --cor-fundo: #0d0d0dc5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("../../img/fundo_terra_no_espaco.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 
+  Conteiner Inicial - apenas o input
+*/
+.conteinerPricipal {
+  min-width: 400px;
+  background-color: var(--cor-fundo);
+  padding: 20px 40px;
+  border-radius: 15px;
+  color: white;
+  backdrop-filter: blur(3px);
+}
+
+.titulo_e_barra {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.titulo::after {
+  content: "";
+  background-color: var(--cor-destaque);
+  width: 40px;
+  position: absolute;
+  height: 3px;
+  z-index: 100;
+  border-radius: 4px;
+  border: 1px solid var(--cor-contraste);
+  left: -50px;
+}
+
+.barra {
+  background-color: var(--cor-destaque);
+  width: 15vw;
+  height: 4px;
+  z-index: 100;
+  border-radius: 4px;
+  border: 1px solid var(--cor-contraste);
+}
+
+p.mensagem {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+p.mensagem span {
+  color: var(--cor-destaque);
+  margin-left: 5px;
+}
+
+p.mensagem::before {
+  position: absolute;
+  content: "";
+  background-color: var(--cor-destaque);
+  border: 1px solid var(--cor-contraste);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  left: -18px;
+}
+
+/* Formulario */
+form.form_cidade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  height: 100px;
+}
+
+.form_cidade input {
+  width: 90%;
+  padding: 15px 20px;
+  height: 100%;
+  font-size: 1rem;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.form_cidade input:focus {
+  outline: 2px solid var(--cor-destaque);
+}
+
+.form_cidade button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  color: white;
+  background-color: var(--cor-destaque);
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.form_cidade button > span {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.form_cidade button:hover {
+  background-color: var(--cor-contraste);
+}
+
+/* 
+  Conteiner informações
+*/
+
+.conteiner_informacoes {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.397);
+  list-style: none;
+}
+
+.cidade_e_bandeira {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cidade_e_bandeira h1 {
+  font-size: 2.1rem;
+  font-weight: 400;
+}
+
+.cidade_e_bandeira h1,
+.cidade_e_bandeira img {
+  margin-bottom: 30px;
+}
+
+.temperatura_e_tempo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.temperatura_e_tempo p{
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.temperatura_e_tempo p > span {
+  margin-right: 10px;
+}
+
+.temperatura_e_tempo p span:nth-child(2) {
+  color: var(--cor-destaque);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.humidade_e_ventos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 40px;
+  position: relative;
+}
+
+.humidade_e_ventos::before {
+  content: "";
+  width: 2px;
+  border-radius: 3px;
+  border: 2px solid var(--cor-contraste);
+  height: 60%;
+  position: absolute;
+  background-color: #b244f2;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.humidade_e_ventos p {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.humidade_e_ventos p span.icone {
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: var(--cor-destaque);
+}
+
+.ventos {
+  margin-left: 30px;
+}
+
+.humidade_e_ventos > p:nth-child(1) span:nth-child(1) {
+  margin-right: 10px;
+}
+
+.humidade_e_ventos p:nth-child(2) span:nth-child(2) {
+  margin-left: 10px;
+}
