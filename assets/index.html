@@ -19,11 +19,11 @@
     <p class="mensagem">Confira o clima em <span>qualquer cidade do mundo!</span></p>
     <form class="form_cidade">
       <input type="text" class="localizacao" placeholder="Nome da cidade">
-      <button type="submit"><span class="material-symbols-outlined">travel_explore</span></button>
+      <button type="submit" class="botao-pesquisa"><span class="material-symbols-outlined">travel_explore</span></button>
     </form>
     <ul class="conteiner_informacoes">
       <li class="cidade_e_bandeira">
-        <h1 class="nome_cidade">Maceió</h1>
+        <h1 class="nome_cidade" data-informacao="nomeCidade">Maceió</h1>
         <img src="https://flagcdn.com/w40/br.png" alt="bandeira pais" class="bandeira">
       </li>
       <li class="temperatura_e_tempo">
@@ -48,5 +48,7 @@
       </li>
     </ul>
   </main>
+
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
