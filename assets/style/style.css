@@ -104,6 +104,7 @@ form.form_cidade {
   justify-content: center;
   padding: 20px 10px;
   height: 100px;
+  position: relative;
 }
 
 .form_cidade input {
@@ -112,6 +113,7 @@ form.form_cidade {
   height: 100%;
   font-size: 1rem;
   border-radius: 10px 0px 0px 10px;
+  transition: all .1s ease;
 }
 
 .form_cidade input:focus {
@@ -236,4 +238,47 @@ form.form_cidade {
 
 .humidade_e_ventos p:nth-child(2) span:nth-child(2) {
   margin-left: 10px;
+}
+
+/* 
+  Estilos junto com JavaScript
+*/
+
+.erroInput {
+  border: 2.5px solid rgb(255, 35, 35);
+}
+
+.mensagemDeErro {
+  position: absolute;
+  bottom: -50px;
+  background-color: rgb(221, 8, 8);
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  animation: aparecer .2s ease;
+}
+
+.mensagemDeErro::after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  border: 17px solid;
+  border-color: rgb(221, 8, 8) transparent transparent;
+  border-radius: 0px 0px 100px 100px;
+  top: -32px; 
+  left: 50px;
+  transform: rotate(180deg);
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
