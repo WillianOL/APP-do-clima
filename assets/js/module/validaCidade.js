@@ -1,4 +1,7 @@
-export default class ValidaCidade {
+import ExibirInformacoes from "./exibirInformacoes.js";
+import initColocarInformacoes from "./colocarInformacoes.js";
+
+export default class Validacao {
   constructor(inputCidade, botaoPesquisa) {
     this.inputCidade = document.querySelector(inputCidade);
     this.botaoPesquisa = document.querySelector(botaoPesquisa);
@@ -26,12 +29,19 @@ export default class ValidaCidade {
   // Valida a cidade
   async validaCidade() {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.inputCidade.value}&appid=${this.apiKey}`)
-    const json = await response.json()
-    if(json.message) {
+    this.dados = await response.json()
+    if(this.dados.message) {
       this.divErroMensage = this.mensagemDeErro('Cidade não encontrada, tente novamente.')
       this.inputCidade.classList.add(this.classErro)
       return
     }
+    this.exibirInformacoes()
+  }
+
+  exibirInformacoes() {
+    const exibirInformacoes = new ExibirInformacoes('.conteiner_informacoes')
+    exibirInformacoes.init()
+    initColocarInformacoes(this.dados)
   }
 
   // Cria uma div com a mensagem de erro
@@ -52,5 +62,6 @@ export default class ValidaCidade {
     if(this.botaoPesquisa && this.inputCidade) {
       this.adicionaEventoClick()
     }
+    return this;
   }
 } 

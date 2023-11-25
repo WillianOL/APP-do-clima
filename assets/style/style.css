@@ -150,6 +150,8 @@ form.form_cidade {
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.397);
   list-style: none;
+  display: none;
+  overflow-y: hidden;
 }
 
 .cidade_e_bandeira {
@@ -280,5 +282,39 @@ form.form_cidade {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+.conteiner_informacoes.conteinerAparece {
+  display: block;
+  animation: conteinerAparece 0.5s ease;
+}
+
+.conteiner_informacoes.conteinerDesaparece {
+  display: block;
+  animation: conteinerDesaparece 0.5s ease forwards;
+}
+
+@keyframes conteinerAparece {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 300px;
+  }
+}
+
+@keyframes conteinerDesaparece {
+  0% {
+    height: 300px;
+  }
+
+  50% {
+    height: 0px;
+  }
+
+  100% {
+    height: 0px;
   }
 }

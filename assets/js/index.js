@@ -1,5 +1,4 @@
-import ValidaCidade from "./module/validaCidade.js";
+import Validacao from "./module/validaCidade.js";
 
-const validarCidade = new ValidaCidade('.localizacao', '.botao-pesquisa');
-
+const validarCidade = new Validacao('.localizacao', '.botao-pesquisa');
 validarCidade.init()
