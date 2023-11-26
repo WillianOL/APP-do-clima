@@ -243,6 +243,26 @@ form.form_cidade {
 }
 
 /* 
+  footer
+*/
+
+footer {
+  position: absolute;
+  bottom: 20px;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.836);
+  font-weight: 300;
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--cor-destaque);
+  font-weight: 400;
+}
+
+/* 
   Estilos junto com JavaScript
 */
 
