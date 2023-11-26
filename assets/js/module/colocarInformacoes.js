@@ -1,4 +1,4 @@
-export default function initColocarInformacoes(dados) {
+export default function colocarInformacoes(dados) {
   const nomeCidade = document.querySelector("[data-informacao='nomeCidade']")
   const temperatura = document.querySelector("[data-informacao='temperatura']")
   const tempo = document.querySelector("[data-informacao='tempo']")

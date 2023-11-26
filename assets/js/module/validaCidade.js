@@ -1,5 +1,5 @@
 import ExibirInformacoes from "./exibirInformacoes.js";
-import initColocarInformacoes from "./colocarInformacoes.js";
+import colocarInformacoes from "./colocarInformacoes.js";
 
 const iconeCarregamento = document.querySelector(".iconeCarregamento")
 export default class Validacao {
@@ -46,14 +46,13 @@ export default class Validacao {
   exibirInformacoes() {
     const exibirInformacoes = new ExibirInformacoes('.conteiner_informacoes')
     exibirInformacoes.init()
-    initColocarInformacoes(this.dados)
+    colocarInformacoes(this.dados)
   }
 
   // Cria uma div com a mensagem de erro
   mensagemDeErro(textoErro) {
     // se a div já existir não executa
     if(this.divErroMensage && this.inputCidade.value === '') return
-    
     const divMensagemErro = document.createElement('div');
     divMensagemErro.classList.add('mensagemDeErro');
     divMensagemErro.innerHTML = `<p>${textoErro}</p>`;
@@ -61,7 +60,7 @@ export default class Validacao {
     return divMensagemErro;
   }
 
-  // adiciona o evento de click
+  // adiciona o evento de click ao botao de pesquisa
   adicionaEventoClick() {
     this.botaoPesquisa.addEventListener('click', this.validaInput)
   }
