@@ -15,7 +15,7 @@ export default class Validacao {
   // Valida o input
   validaInput(event) {
     event.preventDefault()
-    this.divErroMensage;
+    this.divErroMensage = document.querySelector('.mensagemDeErro');
     if(this.inputCidade.value === "") {
       this.divErroMensage = this.mensagemDeErro("Preencha o campo de texto para procurar a cidade!");
       this.inputCidade.classList.add(this.classErro)
@@ -47,6 +47,9 @@ export default class Validacao {
 
   // Cria uma div com a mensagem de erro
   mensagemDeErro(textoErro) {
+    // se a div já existir não executa
+    if(this.divErroMensage) return
+    
     const divMensagemErro = document.createElement('div');
     divMensagemErro.classList.add('mensagemDeErro');
     divMensagemErro.innerHTML = `<p>${textoErro}</p>`;
