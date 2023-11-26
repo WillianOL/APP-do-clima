@@ -318,3 +318,30 @@ form.form_cidade {
     height: 0px;
   }
 }
+
+/* Icone de carregamento */
+.iconeCarregamento {
+  display: none;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.iconeLoading {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: 4px solid transparent;
+  border-right: solid 4px var(--cor-destaque);
+  border-bottom: solid 4px var(--cor-destaque);
+  border-radius: 50%;
+  animation: iconeCarregamento 1s linear infinite;
+}
+@keyframes iconeCarregamento {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}

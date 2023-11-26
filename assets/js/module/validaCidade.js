@@ -1,6 +1,7 @@
 import ExibirInformacoes from "./exibirInformacoes.js";
 import initColocarInformacoes from "./colocarInformacoes.js";
 
+const iconeCarregamento = document.querySelector(".iconeCarregamento")
 export default class Validacao {
   constructor(inputCidade, botaoPesquisa) {
     this.inputCidade = document.querySelector(inputCidade);
@@ -29,13 +30,16 @@ export default class Validacao {
 
   // Valida a cidade
   async validaCidade() {
+    iconeCarregamento.style.display = 'flex'
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.inputCidade.value}&appid=${this.apiKey}&lang=${this.lingagemApi}`)
     this.dados = await response.json()
     if(this.dados.message) {
       this.divErroMensage = this.mensagemDeErro('Cidade não encontrada, tente novamente.')
       this.inputCidade.classList.add(this.classErro)
+      iconeCarregamento.style.display = 'none'
       return
     }
+    iconeCarregamento.style.display = 'none'
     this.exibirInformacoes()
   }
 
@@ -48,7 +52,7 @@ export default class Validacao {
   // Cria uma div com a mensagem de erro
   mensagemDeErro(textoErro) {
     // se a div já existir não executa
-    if(this.divErroMensage) return
+    if(this.divErroMensage && this.inputCidade.value === '') return
     
     const divMensagemErro = document.createElement('div');
     divMensagemErro.classList.add('mensagemDeErro');
