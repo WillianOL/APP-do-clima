@@ -7,6 +7,7 @@ export default class Validacao {
     this.botaoPesquisa = document.querySelector(botaoPesquisa);
     this.apiKey = 'b13b0b576ed5a12bba4c925bd48f583a';
     this.classErro = 'erroInput'
+    this.lingagemApi = 'pt_br'
 
     this.validaInput = this.validaInput.bind(this);
   }
@@ -28,7 +29,7 @@ export default class Validacao {
 
   // Valida a cidade
   async validaCidade() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.inputCidade.value}&appid=${this.apiKey}`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.inputCidade.value}&appid=${this.apiKey}&lang=${this.lingagemApi}`)
     this.dados = await response.json()
     if(this.dados.message) {
       this.divErroMensage = this.mensagemDeErro('Cidade não encontrada, tente novamente.')

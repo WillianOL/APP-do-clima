@@ -4,10 +4,12 @@ export default function initColocarInformacoes(dados) {
   const tempo = document.querySelector("[data-informacao='tempo']")
   const humidade = document.querySelector("[data-informacao='humidade']")
   const ventos = document.querySelector("[data-informacao='ventos']")
+  const iconeBandeira = document.querySelector(".bandeira")
   
   nomeCidade.innerText = dados.name;
-  temperatura.innerText = `${Math.floor(dados.main.temp - 273.15)}°C`;
+  temperatura.innerText = `${Math.round(dados.main.temp - 273.15)}°C`;
   tempo.innerText = dados.weather[0].description;
   humidade.innerText = `${dados.main.humidity}%`
-  ventos.innerText = `${Math.floor((dados.wind.speed * 3.6))}Km/h`
+  ventos.innerText = `${Math.round((dados.wind.speed * 3.6))}Km/h`
+  iconeBandeira.setAttribute('src', `https://flagcdn.com/w40/${dados.sys.country.toLowerCase()}.png`)
 }
