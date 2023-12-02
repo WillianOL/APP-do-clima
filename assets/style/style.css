@@ -1,7 +1,7 @@
 :root {
   --cor-destaque: #b244f2;
   --cor-contraste: #4C1B59;
-  --cor-fundo: #0d0d0dc5;
+  --cor-fundo: rgba(255, 255, 255, 0.795);
 }
 
 * {
@@ -9,7 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   border: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -17,32 +17,34 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url("../../img/fundo_terra_no_espaco.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgb(247, 231, 201);
 }
 
 /* 
   Conteiner Inicial - apenas o input
 */
 .conteinerPricipal {
-  min-width: 400px;
+  max-width: 500px;
   background-color: var(--cor-fundo);
-  padding: 20px 40px;
-  border-radius: 15px;
-  color: white;
+  border-radius: 20px;
+  color: black;
   backdrop-filter: blur(3px);
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.116);
 }
 
-.titulo_e_barra {
+.conteiner-form {
+  padding: 20px 40px;
+}
+
+.conteiner-form .titulo_e_barra {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
   gap: 20px;
 }
 
-.titulo {
+.conteiner-form .titulo {
+  font-size: 1.7rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -51,7 +53,7 @@ body {
   margin-left: 30px;
 }
 
-.titulo::after {
+.conteiner-form .titulo::after {
   content: "";
   background-color: var(--cor-destaque);
   width: 40px;
@@ -63,37 +65,39 @@ body {
   left: -50px;
 }
 
-.barra {
+.conteiner-form .barra {
   background-color: var(--cor-destaque);
-  width: 15vw;
+  width: 5vw;
   height: 4px;
   z-index: 100;
   border-radius: 4px;
   border: 1px solid var(--cor-contraste);
+  justify-self: flex-end;
 }
 
-p.mensagem {
-  font-size: 1.3rem;
+.conteiner-form p.mensagem {
+  font-size: 1rem;
   font-weight: 400;
   margin-bottom: 10px;
   position: relative;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-p.mensagem span {
+.conteiner-form p.mensagem span {
   color: var(--cor-destaque);
   margin-left: 5px;
 }
 
-p.mensagem::before {
+.conteiner-form p.mensagem::before {
   position: absolute;
   content: "";
   background-color: var(--cor-destaque);
   border: 1px solid var(--cor-contraste);
   border-radius: 50%;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   left: -18px;
 }
 
@@ -114,10 +118,11 @@ form.form_cidade {
   font-size: 1rem;
   border-radius: 10px 0px 0px 10px;
   transition: all .1s ease;
+  border: 1px solid rgba(0, 0, 0, 0.212);
 }
 
 .form_cidade input:focus {
-  outline: 2px solid var(--cor-destaque);
+  outline: 1px solid var(--cor-destaque);
 }
 
 .form_cidade button {
@@ -145,13 +150,22 @@ form.form_cidade {
 /* 
   Conteiner informações
 */
-
 .conteiner_informacoes {
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.397);
-  list-style: none;
   display: none;
-  overflow-y: hidden;
+  margin-top: 30px;
+  padding-top: 30px;
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+
+.conteiner_informacoes > video {
+  position: absolute;
+  z-index: -1;
+  width: 500px;
+  top: 0px;
+  left: 0px;
 }
 
 .cidade_e_bandeira {
@@ -162,7 +176,7 @@ form.form_cidade {
 }
 
 .cidade_e_bandeira h1 {
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
@@ -177,17 +191,18 @@ form.form_cidade {
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 30px;
 }
 
 .temperatura_e_tempo p{
   display: flex;
   align-items: center;
-  font-size: 1.6rem;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-.temperatura_e_tempo p > span {
-  margin-right: 10px;
+.temperatura_e_tempo p:nth-child(1) {
+  font-size: 2.7rem;
 }
 
 .temperatura_e_tempo p span:nth-child(2) {
@@ -199,19 +214,22 @@ form.form_cidade {
 .humidade_e_ventos {
   display: flex;
   align-items: center;
+  background-color: white;
+  color: black;
   justify-content: space-evenly;
-  padding: 40px;
+  padding: 25px 20px;
+  margin-top: 30px;
   position: relative;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .humidade_e_ventos::before {
   content: "";
-  width: 2px;
+  width: 1px;
   border-radius: 3px;
-  border: 2px solid var(--cor-contraste);
   height: 60%;
   position: absolute;
-  background-color: #b244f2;
+  background-color: var(--cor-destaque);
   top: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
@@ -220,7 +238,7 @@ form.form_cidade {
 .humidade_e_ventos p {
   display: flex;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 
@@ -252,7 +270,6 @@ footer {
 }
 
 footer p {
-  color: rgba(255, 255, 255, 0.836);
   font-weight: 300;
 }
 
@@ -267,17 +284,19 @@ footer p a {
 */
 
 .erroInput {
-  border: 2.5px solid rgb(255, 35, 35);
+  border: 1.8px solid rgb(255, 35, 35) !important;
 }
 
 .mensagemDeErro {
+  color: white;
   position: absolute;
   bottom: -50px;
   background-color: rgb(221, 8, 8);
   padding: 15px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border-radius: 10px;
   animation: aparecer .2s ease;
+  width: 410px;
 }
 
 .mensagemDeErro::after {
@@ -305,13 +324,18 @@ footer p a {
   }
 }
 
+.conteiner_informacoes.conteinerAparece,
+.conteiner_informacoes.conteinerDesaparece{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .conteiner_informacoes.conteinerAparece {
-  display: block;
   animation: conteinerAparece 0.5s ease;
 }
 
 .conteiner_informacoes.conteinerDesaparece {
-  display: block;
   animation: conteinerDesaparece 0.5s ease forwards;
 }
 
@@ -321,21 +345,25 @@ footer p a {
   }
 
   100% {
-    height: 300px;
+    height: 350px;
+    padding: 30px 0px 0px 0px !important;
   }
 }
 
 @keyframes conteinerDesaparece {
   0% {
-    height: 300px;
+    height: 350px;
+    padding: 30px;
   }
 
   50% {
     height: 0px;
+    padding: 0px;
   }
 
   100% {
     height: 0px;
+    padding: 0px;
   }
 }
 

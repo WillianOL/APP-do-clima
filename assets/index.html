@@ -4,28 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aplicação do clima</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="shortcut icon" href="../img/icone-pagina.png" type="image/x-icon">
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
   <main class="conteinerPricipal">
-    <div class="titulo_e_barra">
-      <h1 class="titulo"> App do Clima</h1>
-      <span class="barra"></span>
-    </div>
-    <p class="mensagem">Confira o clima em <span>qualquer cidade do mundo!</span></p>
-    <form class="form_cidade">
-      <input type="text" class="localizacao" placeholder="Nome da cidade">
-      <button type="submit" class="botao-pesquisa"><span class="material-symbols-outlined">travel_explore</span></button>
-    </form>
-    <div class="iconeCarregamento">
-      <div class="iconeLoading"></div>
-    </div>
+    <section class="conteiner-form">
+      <div class="titulo_e_barra">
+        <h1 class="titulo"> App do Clima</h1>
+        <span class="barra"></span>
+      </div>
+      <p class="mensagem">Confira o clima em <span>qualquer cidade do mundo!</span></p>
+      <form class="form_cidade">
+        <input type="text" class="localizacao" placeholder="Nome da cidade">
+        <button type="submit" class="botao-pesquisa"><span class="material-symbols-outlined">travel_explore</span></button>
+      </form>
+      <div class="iconeCarregamento">
+        <div class="iconeLoading"></div>
+      </div>
+    </section>
     <ul class="conteiner_informacoes">
+      <video src="../img/chuvendo.mp4" autoplay  muted loop class="videoBackground"></video>
       <li class="cidade_e_bandeira"> 
         <h1 class="nome_cidade" data-informacao="nomeCidade">Maceió</h1>
         <img src="https://flagcdn.com/w40/br.png" alt="bandeira pais" class="bandeira">
