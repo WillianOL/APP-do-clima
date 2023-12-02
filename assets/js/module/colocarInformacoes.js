@@ -8,7 +8,8 @@ export default function colocarInformacoes(dados) {
 
   const descricaoText = dados.weather[0].description;
 
-  const mudarBackgorund = async () => {
+  // Muda o background dependendo do clima
+  const mudarBackgorund = () => {
     const videoBackground = document.querySelector('.videoBackground')
     const neve = descricaoText.includes('neve')
     const chuva = descricaoText.includes('chuva' || 'nublado')
@@ -18,10 +19,11 @@ export default function colocarInformacoes(dados) {
     if(neve) videoBackground.setAttribute('src', '../../img/nevando.mp4')
     if(chuva) videoBackground.setAttribute('src', '../../img/chuvendo.mp4')
     if(tempestade) videoBackground.setAttribute('src', '../../img/tempestade.mp4')
-    if(nuvens) videoBackground.setAttribute('src', '../../img/chuvendo.mp4')
+    if(nuvens) videoBackground.setAttribute('src', '../../img/ceuNublado.mp4')
     if(ceuLimpo) videoBackground.setAttribute('src', '../../img/ceuLimpo.mp4')
   } 
 
+  // Faz o innerText das informações
   const innerInformacoes = () => {
     const semLetra = descricaoText.slice(descricaoText.length - descricaoText.length + 1);
     const letraMaiuscola = descricaoText[0].toUpperCase();
