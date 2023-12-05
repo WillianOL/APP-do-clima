@@ -2,6 +2,7 @@ import ExibirInformacoes from './exibirInformacoes.js';
 import colocarInformacoes from './colocarInformacoes.js';
 
 const iconeCarregamento = document.querySelector('.iconeCarregamento');
+
 export default class Validacao {
   constructor(inputCidade, botaoPesquisa) {
     this.inputCidade = document.querySelector(inputCidade);

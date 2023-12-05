@@ -10,9 +10,9 @@ export default function colocarInformacoes(dados) {
 
   // Muda o background dependendo do clima
   const mudarBackgorund = () => {
-    const videoBackground = document.querySelector('.videoBackground')
-    const valoresPossiveis = ['neve', 'chuva', 'tempestade', 'nuvens', 'nublado']
-    const itemTempo = valoresPossiveis.find(item => descricaoText.includes(item) ? item : '')
+    const videoBackground = document.querySelector('.videoBackground');
+    const valoresPossiveis = ['neve', 'chuva', 'tempestade', 'nuvens', 'nublado'];
+    const itemTempo = valoresPossiveis.find(item => descricaoText.includes(item) ? item : '');
     switch(itemTempo) {
       case 'neve':
         videoBackground.setAttribute('src', '../../img/nevando.mp4');
