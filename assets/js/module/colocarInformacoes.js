@@ -15,22 +15,22 @@ export default function colocarInformacoes(dados) {
     const itemTempo = valoresPossiveis.find(item => descricaoText.includes(item) ? item : '');
     switch(itemTempo) {
       case 'neve':
-        videoBackground.setAttribute('src', '../../img/nevando.mp4');
+        videoBackground.setAttribute('src', 'https://willianol.github.io/APP-do-clima/img/nevando.mp4');
         break
       case 'chuva':
-        videoBackground.setAttribute('src', '../../img/chuvendo.mp4');
+        videoBackground.setAttribute('src', 'https://willianol.github.io/APP-do-clima/img/chuvendo.mp4');
         break
       case 'tempestade':
-        videoBackground.setAttribute('src', '../../img/tempestade.mp4');
+        videoBackground.setAttribute('src', 'https://willianol.github.io/APP-do-clima/img/tempestade.mp4');
         break
       case 'nuvens':
-        videoBackground.setAttribute('src', '../../img/ceuNublado.mp4');
+        videoBackground.setAttribute('src', 'https://willianol.github.io/APP-do-clima/img/ceuNublado.mp4');
         break
       case 'nublado':
-        videoBackground.setAttribute('src', '../../img/ceuNublado.mp4');
+        videoBackground.setAttribute('src', 'https://willianol.github.io/APP-do-clima/img/ceuNublado.mp4');
         break
       default:
-        videoBackground.setAttribute('src', '../../img/ceuLimpo.mp4');
+        videoBackground.setAttribute('src', 'https://willianol.github.io/APP-do-clima/img/ceuLimpo.mp4');
     }
   }
 
