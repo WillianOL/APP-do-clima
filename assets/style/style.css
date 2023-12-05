@@ -406,10 +406,11 @@ footer p a {
 @media(max-width: 500px) {
   body {
     overflow-y: hidden;
+    align-items: flex-start;
   }
 
   .conteinerPricipal {
-    margin: 10px;
+    margin: 120px 0px 0px 0px;
   }
 
   .conteiner-form {
