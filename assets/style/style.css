@@ -270,6 +270,7 @@ form.form_cidade {
 */
 
 footer {
+  text-align: center;
   position: absolute;
   bottom: 20px;
 }
@@ -396,5 +397,58 @@ footer p a {
 
   100%{
     transform: rotate(360deg);
+  }
+}
+
+/* 
+  Responsivo
+*/
+@media(max-width: 500px) {
+  .conteinerPricipal {
+    margin: 10px;
+  }
+
+  .conteiner-form {
+    padding: 15px;
+  }
+
+  .conteiner-form .titulo_e_barra {
+    justify-content: space-between;
+  }
+
+  .titulo_e_barra .barra {
+    width: 30vw;
+  }
+
+  .titulo_e_barra .titulo {
+    margin-left: 0px;
+    width: 200px !important;
+  }
+
+  .titulo_e_barra .titulo::after {
+    display: none;
+  }
+
+  .conteiner-form p.mensagem {
+    display: block;
+  }
+
+  .conteiner-form p.mensagem::before {
+    top: 8px;
+    left: -12px;
+  }
+
+  .mensagemDeErro {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 70vw;
+    font-size: .8rem;
+    height: 60px;
+    top: 100px;
+  }
+
+  footer {
+    font-size: .7rem;
   }
 }
