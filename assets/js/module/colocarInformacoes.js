@@ -7,21 +7,30 @@ export default function colocarInformacoes(dados) {
   const iconeBandeira = document.querySelector('.bandeira');
 
   const descricaoText = dados.weather[0].description;
+  console.log(descricaoText.replace(/w+/g));
 
   // Muda o background dependendo do clima
   const mudarBackgorund = () => {
     const videoBackground = document.querySelector('.videoBackground')
-    const neve = descricaoText.includes('neve')
-    const chuva = descricaoText.includes('chuva' || 'nublado')
-    const tempestade = descricaoText.includes('tempestade')
-    const nuvens = descricaoText.includes('nuvens')
-    const ceuLimpo = descricaoText.includes('céu')
-    if(neve) videoBackground.setAttribute('src', '../../img/nevando.mp4')
-    if(chuva) videoBackground.setAttribute('src', '../../img/chuvendo.mp4')
-    if(tempestade) videoBackground.setAttribute('src', '../../img/tempestade.mp4')
-    if(nuvens) videoBackground.setAttribute('src', '../../img/ceuNublado.mp4')
-    if(ceuLimpo) videoBackground.setAttribute('src', '../../img/ceuLimpo.mp4')
-  } 
+    const valoresPossiveis = ['neve', 'chuva', 'tempestade', 'nuvens', 'nublado']
+    const itemTempo = valoresPossiveis.find(item => descricaoText.includes(item) ? item : '')
+    switch(itemTempo) {
+      case 'neve':
+        videoBackground.setAttribute('src', '../../img/nevando.mp4');
+        break
+      case 'chuva':
+        videoBackground.setAttribute('src', '../../img/chuvendo.mp4');
+        break
+      case 'tempestade':
+        videoBackground.setAttribute('src', '../../img/tempestade.mp4');
+        break
+      case ('nublado' || 'nuvens'):
+        videoBackground.setAttribute('src', '../../img/ceuNublado.mp4');
+        break
+      default:
+        videoBackground.setAttribute('src', '../../img/ceuLimpo.mp4');
+    }
+  }
 
   // Faz o innerText das informações
   const innerInformacoes = () => {
