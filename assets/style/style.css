@@ -404,6 +404,10 @@ footer p a {
   Responsivo
 */
 @media(max-width: 500px) {
+  body {
+    overflow-y: hidden;
+  }
+
   .conteinerPricipal {
     margin: 10px;
   }
@@ -450,5 +454,6 @@ footer p a {
 
   footer {
     font-size: .7rem;
+    bottom: -100px;
   }
 }
