@@ -7,7 +7,6 @@ export default function colocarInformacoes(dados) {
   const iconeBandeira = document.querySelector('.bandeira');
 
   const descricaoText = dados.weather[0].description;
-  console.log(descricaoText.replace(/w+/g));
 
   // Muda o background dependendo do clima
   const mudarBackgorund = () => {
@@ -24,7 +23,10 @@ export default function colocarInformacoes(dados) {
       case 'tempestade':
         videoBackground.setAttribute('src', '../../img/tempestade.mp4');
         break
-      case ('nublado' || 'nuvens'):
+      case 'nuvens':
+        videoBackground.setAttribute('src', '../../img/ceuNublado.mp4');
+        break
+      case 'nublado':
         videoBackground.setAttribute('src', '../../img/ceuNublado.mp4');
         break
       default:
