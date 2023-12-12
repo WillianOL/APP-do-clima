@@ -2,14 +2,14 @@ export default class ExibirInformacoes {
   constructor(conteiner) {
     this.conteiner = document.querySelector(conteiner);
     this.classActive = 'conteinerAparece';
-    this.classDesable = 'conteinerDesaparece';
+    this.classDisabled = 'conteinerDesaparece';
   }
   exibirConteiner() {
     if (this.conteiner.classList.contains(this.classActive)) {
       this.conteiner.classList.remove(this.classActive);
-      this.conteiner.classList.add(this.classDesable);
+      this.conteiner.classList.add(this.classDisabled);
       setTimeout(() => {
-        this.conteiner.classList.remove(this.classDesable);
+        this.conteiner.classList.remove(this.classDisabled);
         this.conteiner.classList.add(this.classActive);
       }, 500);
     }
